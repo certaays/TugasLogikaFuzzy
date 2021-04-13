@@ -1,0 +1,73 @@
+[System]
+Name='123190093_KategoriBeasiswa'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='IPK'
+Range=[0 4]
+NumMFs=3
+MF1='Rendah':'trimf',[0 1.25 2.5]
+MF2='Sedang':'trimf',[2.5 3 3.5]
+MF3='Tinggi':'trimf',[3.5 3.75 4]
+
+[Input2]
+Name='Penghasilan_Orang_Tua'
+Range=[0 6]
+NumMFs=3
+MF1='Rendah':'trapmf',[0 0 1 2]
+MF2='Sedang':'trimf',[2 3 4]
+MF3='Tinggi':'trapmf',[4 5 6 6]
+
+[Input3]
+Name='Pengeluaran'
+Range=[0 6]
+NumMFs=3
+MF1='Rendah':'trapmf',[0 0 1 2]
+MF2='Sedang':'trimf',[2 3 4]
+MF3='Tinggi':'trapmf',[4 5 6 6]
+
+[Output1]
+Name='Kategori_Beasiswa'
+Range=[0 1]
+NumMFs=3
+MF1='Tidak_Mendapat_Beasiswa':'trimf',[-0.416666666666667 0 0.416666666666667]
+MF2='Beasiswa_Parsial':'trimf',[0.0833333333333333 0.5 0.916666666666667]
+MF3='Beasiswa_Penuh':'trimf',[0.583333333333333 1 1.41666666666667]
+
+[Rules]
+1 1 1, 1 (1) : 1
+1 1 2, 1 (1) : 1
+1 1 3, 1 (1) : 1
+1 2 1, 1 (1) : 1
+1 2 2, 1 (1) : 1
+1 2 3, 1 (1) : 1
+1 3 1, 1 (1) : 1
+1 3 2, 1 (1) : 1
+1 3 3, 1 (1) : 1
+2 1 1, 2 (1) : 1
+2 1 2, 3 (1) : 1
+2 1 3, 3 (1) : 1
+2 2 1, 2 (1) : 1
+2 2 2, 2 (1) : 1
+2 2 3, 3 (1) : 1
+2 3 1, 2 (1) : 1
+2 3 2, 2 (1) : 1
+2 3 3, 2 (1) : 1
+3 1 1, 3 (1) : 1
+3 1 2, 3 (1) : 1
+3 1 3, 3 (1) : 1
+3 2 1, 2 (1) : 1
+3 2 2, 3 (1) : 1
+3 2 3, 3 (1) : 1
+3 3 1, 2 (1) : 1
+3 3 2, 2 (1) : 1
+3 3 3, 3 (1) : 1
